@@ -1,12 +1,80 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>my jarona</title>
-</head>
+  <head>
+    <title>Hokago</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Hokago Magazine. An escape for students across the world."> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: bisque;
+            margin:0px;
+        }
+        .container {
+            display: grid;
+            background-color: rgb(255, 255, 255);
+            max-width: 75%;
+            height: 100vh;
+            margin: auto;
+            grid-template-columns: 0.9fr 1fr 1fr;
+            grid-template-rows: 0.2fr 1.3fr 1.5fr 0.5fr 1.7fr; 
+            grid-template-areas:
+            "nav nav nav"
+            "header header header"
+            "sidebar about about"
+            "sidebar music music"
+            "new-articles new-articles new-articles";
+        }
+        nav {
+            background-color: rgb(143, 143, 215);
+            grid-area: nav;
+        }
+        header {
+            background-color: rgb(175, 97, 224);
+            grid-area: header;
+            margin-bottom: 15px;
+        }
+        .sidebar {
+            background-color: rgb(97, 203, 224);
+            grid-area: sidebar;
+        }
+        .about {
+            background-color: rgb(97, 122, 224);
+            grid-area: about;
+            margin: 15px;
+            margin-top: 0px;
+        }
+        .music {
+            background-color: rgb(170, 220, 255);
+            grid-area: music;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        .new-articles {
+            background-color: rgb(48, 59, 129);
+            grid-area: new-articles;
+            margin-top: 15px;
+        }
 
-<body>
-    <h1>sorry to keep you waiting</h1></h1>
-    <p>Glue!OH MY GOD ITS WORKING THE WEBSITE IS WORKING!</p>
-    <p> helloooo fern testing </p>
-</body>
+    </style>
+    
+  </head>
+
+    <body>
+       <div class="container">
+            <nav>nav</nav>
+            <header>header</header>
+            <div class="sidebar">
+                <ul>
+                    <li>update 1</li>
+                    <li>update 2</li>
+                    <li>update 3</li>
+                </ul>
+            </div>
+            <div class="about">about</div>
+            <div class="music">music</div>
+            <div class="new-articles">new articles</div>
+            <div class="test">uhhhh</div>
+       </div>
+    </body>
 </html>
