@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="description" content="Hokago Magazine. An escape for students across the world."> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body {
             background-color: bisque;
             margin:0px;
@@ -17,52 +21,110 @@
             max-width: 75%;
             height: 100vh;
             margin: auto;
-            grid-template-columns: 0.9fr 1fr 1fr;
-            grid-template-rows: 200px 180px 90px 250px 200px; 
+            grid-template-columns: 0.8fr 1fr 1fr;
+            grid-template-rows: 200px 180px 90px 250px 800px 600px 600px; 
             grid-template-areas:
             "header header header"
             "sidebar about about"
             "sidebar music music"
             "new-articles new-articles new-articles"
-            "test test test";
+            "extras extras extras"
+            "team team team"
+            "newsletter newsletter newsletter";
             overflow: scroll;
+            scrollbar-width: none;
+            gap: 10px;
         }
         nav {
+            display: flex;
             background-color: rgb(143, 143, 215);
-            position:sticky;
+            position: sticky;
             height: 40px;
+            align-content: center;
+            padding: auto;
+            justify-content: space-evenly;
+            font-size: 1.3rem;
+            align-items: center;
+            button {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
         }
         header {
+            display: flex;
+            flex-wrap:wrap;
             background-color: rgb(175, 97, 224);
             grid-area: header;
-            border-radius:0px 0px 15px 15px;
+            border-radius:15px;
         }
         .sidebar {
+            display: flex;
+            flex-direction: column;
             background-color: rgb(97, 203, 224);
             grid-area: sidebar;
-            margin-top: 10px;
             border-radius: 15px;
+            padding:5px;
+            ul {
+                font-size: 1.2rem;
+            }
         }
         .about {
+            display: flex;
             background-color: rgb(97, 122, 224);
             grid-area: about;
-            margin: 10px 0px 0px 10px;
             border-radius: 15px;
         }
         .music {
+            display: flex;
             background-color: rgb(170, 220, 255);
             grid-area: music;
-            margin:10px 30px 0px 40px;
             border-radius: 15px;
         }
         .new-articles {
+            display: flex;
             background-color: rgb(48, 59, 129);
             grid-area: new-articles;
-            margin-top: 10px;
             border-radius: 15px;
         }
-        .test {
-            grid-area: test;
+        .extras {
+            display: flex;
+            background-color: rgb(26, 167, 134);
+            grid-area: extras;
+            border-radius: 15px;
+        }
+        .team {
+            display: flex;
+            grid-area: team;
+            background-color:rgb(104, 208, 212);
+            border-radius: 15px;
+        }
+        .newsletter {
+            display: flex;
+            grid-area: newsletter;
+            background-color:rgb(108, 42, 165);
+            border-radius: 15px;
+        }
+        @media only screen and (max-width: 550px) {
+            .container {
+                display: grid;
+                grid-template-columns: 120px 280px;
+                grid-template-rows: 120px 80px 60px 100px 800px;
+                grid-template-areas:
+                "header header"
+                "sidebar about"
+                "sidebar music"
+                "new-articles new-articles"
+                "extras extras"
+            }
+            .sidebar {
+                h2 {
+                    font-size: 1rem;
+                }
+                ul {
+                    font-size: 0.8rem;
+                }
+            }
         }
 
     </style>
@@ -70,10 +132,19 @@
   </head>
 
     <body>
-        <nav>nav</nav>
+        <nav>
+            <p>hokago.co</p>
+            <button>home</button>
+            <button>latest issues</button>
+            <button>articles</button>
+            <button>meet the team</button>
+            <button>contact us</button>
+            <button>newsletter</button>
+        </nav>
        <div class="container">
-            <header>header</header>
+            <header><h1>hokago magazine</h1></header>
             <div class="sidebar">
+                <h2>frikin like updates n shi</h2>
                 <ul>
                     <li>update 1</li>
                     <li>update 2</li>
@@ -83,7 +154,9 @@
             <div class="about">about</div>
             <div class="music">music</div>
             <div class="new-articles">new articles</div>
-            <div class="test">uhhhh</div>
+            <div class="extras"> personal buttons go here</div>
+            <div class="team">meet the team</div>
+            <div class="newsletter">newsetter</div>
        </div>
     </body>
 </html>
