@@ -107,15 +107,18 @@
         }
         @media only screen and (max-width: 550px) {
             .container {
+                max-width: 100%;
                 display: grid;
-                grid-template-columns: 120px 280px;
-                grid-template-rows: 120px 80px 60px 100px 800px;
+                grid-template-columns: 120px 420px;
+                grid-template-rows: 120px 80px 60px 100px 800px 600px 600px;
                 grid-template-areas:
                 "header header"
                 "sidebar about"
                 "sidebar music"
                 "new-articles new-articles"
                 "extras extras"
+                "team team"
+                "newsletter newsletter"
             }
             .sidebar {
                 h2 {
@@ -123,6 +126,12 @@
                 }
                 ul {
                     font-size: 0.8rem;
+                }
+            }
+            nav {
+                font-size: 0.9rem;
+                button {
+                    font-size: 0.6rem;
                 }
             }
         }
@@ -135,7 +144,7 @@
         <nav>
             <p>hokago.co</p>
             <button>home</button>
-            <button>latest issues</button>
+            <button>magazine</button>
             <button>articles</button>
             <button>meet the team</button>
             <button>contact us</button>
@@ -156,7 +165,7 @@
             <div class="new-articles">new articles</div>
             <div class="extras"> personal buttons go here</div>
             <div class="team">meet the team</div>
-            <div class="newsletter">newsetter</div>
+            <div class="newsletter">newsletter</div>
        </div>
     </body>
 </html>
