@@ -11,23 +11,25 @@
             box-sizing: border-box;
         }
         body {
-            background-color: bisque;
+            background-color:#6c61ff;
+;
             margin: 0px;
             overflow: hidden;
         }
         .container {
             display: grid;
-            background-color: bisque;
+            background-color: #6c61ff;
             max-width: 75%;
             height: 100vh;
             margin: auto;
             grid-template-columns: 0.8fr 1fr 1fr;
-            grid-template-rows: 200px 180px 90px 250px 800px 600px 600px; 
+            grid-template-rows: 250px 180px 90px 250px 400px 800px 600px 600px; 
             grid-template-areas:
             "header header header"
             "sidebar about about"
             "sidebar music music"
-            "new-articles new-articles new-articles"
+            "articles articles articles"
+            "latest-issue latest-issue latest-issue"
             "extras extras extras"
             "team team team"
             "newsletter newsletter newsletter";
@@ -37,14 +39,15 @@
         }
         nav {
             display: flex;
-            background-color: rgb(143, 143, 215);
+            background-color: #584ee1;
             position: fixed;
             height: 40px;
             width: 100%;
             align-content: center;
             padding: auto;
             margin:auto;
-            justify-content: space-evenly;
+            justify-content: flex-start;
+            gap: 15px;
             font-size: 1.3rem;
             align-items: center;
 
@@ -52,53 +55,71 @@
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
+                background-color: #d3a4ff;
             }
         }
         header {
             margin-top:40px;
             display: flex;
             flex-wrap:wrap;
-            background-color: rgb(175, 97, 224);
+            background-color: hsl(251, 100%, 72%);
             grid-area: header;
             border-radius:15px;
+            h1 {
+                background-color: #8ae0eb;
+                padding:5px;
+                margin:auto;
+            }
         }
         .sidebar {
             display: flex;
             flex-direction: column;
-            background-color: rgb(97, 203, 224);
+            background-color: #ff83ec;
             grid-area: sidebar;
             border-radius: 15px;
             padding:5px;
+            
             ul {
                 font-size: 1.2rem;
             }
         }
         .about {
             display: flex;
-            background-color: rgb(97, 122, 224);
+            background-color: #6c61ff;
+            flex-direction: column;
+            text-align: center;
             grid-area: about;
             border-radius: 15px;
+            text-decoration-line: underline;
+            line-height: 25px;
+            padding: 5px;
+            box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.10);
+            border-radius: 8px;
+            h2 {
+                margin:2px;
+            }
         }
         .music {
             display: flex;
-            background-color: rgb(170, 220, 255);
+            background-color: #d3a4ff;
             grid-area: music;
             border-radius: 15px;
             margin: 0px 30px 0px 20px; 
         }
-        .new-articles {
+        .articles {
             display: flex;
             flex-direction: column;
-            background-color: rgb(48, 59, 129);
-            grid-area: new-articles;
+            background-color: #2c1dab;
+            grid-area: articles;
             border-radius: 15px;
             h2 {
                 margin: 5px 0px 0px 8px;
+                color: white;
             }
             .articles-box {
                 display: grid;
                 width: auto;
-                background-color: white;
+                background-color: hsl(251, 100%, 72%);;
                 height: 90%;
                 margin: 20px;
                 border-radius: 10px;
@@ -113,6 +134,21 @@
             background-color: rgb(26, 167, 134);
             grid-area: extras;
             border-radius: 15px;
+        }
+        .latest-issue {
+            display: flex;
+            grid-area: latest-issue;
+            background-color: #ff83ec;
+            .issue-box {
+                display: flex;
+                background-color: #ca2c80;
+                width: 80%;
+                height: 80%;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                margin:auto;
+            }
         }
         .team {
             display: flex;
@@ -130,12 +166,13 @@
             .container {
                 min-width: 100%;
                 grid-template-columns: 120px 420px;
-                grid-template-rows: px 80px 60px 100px 800px 600px 600px;
+                grid-template-rows: 300px 180px 60px 240px 400px 800px 600px 600px;
                 grid-template-areas:
                 "header header"
                 "sidebar about"
                 "sidebar music"
-                "new-articles new-articles"
+                "articles articles"
+                "latest-issue latest-issue"
                 "extras extras"
                 "team team"
                 "newsletter newsletter"; 
@@ -172,24 +209,30 @@
        <div class="container">
             <header><h1>Hokago magazine</h1></header>
             <div class="sidebar">
-                <h2>frikin like updates n shi</h2>
+                <h2>Updates</h2>
                 <ul>
                     <li>update 1</li>
                     <li>update 2</li>
                     <li>update 3</li>
                 </ul>
             </div>
-            <div class="about">about</div>
+            <div class="about">
+                <h2>About</h2>
+                <p>hey guys we're hokago magazine!
+                <br>take a picture, post it on instagram. #hopecore #dystopian #frutigeraero. it goes SUPER VIRAL. suddenly, we're rich, we're famous, anthony dies in a car crash (WAIT WTF???), and we get to meet THE CEO OF YOUTUBE. YAYYYY
+            </p></div>
             <div class="music">music</div>
-            <div class="new-articles">
-                <h2>new articles</h2>
+            <div class="articles">
+                <h2>weekly picks</h2>
                 <div class="articles-box">
-                    <p>articles go here, i tried to do it but i did it wrong 
-                        <br> testing testing 123
-                    </p>
+                    <p>articles go here</p>
                 </div>
             </div>
-            <div class="extras"> personal buttons go here</div>
+            <div class="latest-issue">latest issue
+                <div class="issue-box"><p>issue here (ignore the scrolling error ill fix later)</p></div>
+            </div>
+            <div class="extras">personal buttons go here</div>
+            
             <div class="team">meet the team</div>
             <div class="newsletter">newsletter</div>
        </div>
